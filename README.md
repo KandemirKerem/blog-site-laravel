@@ -20,3 +20,5 @@ Projenin CSS (Tailwind) ve JS (Livewire/Vite) dosyalarının anlık olarak derle
 
 ```bash
 npm install && npm run dev
+```
+Projeyi geliştirirken XAMPP ve Mysql kullandım siz .env dosyasından kendinize göre değiştirebilirsiniz
