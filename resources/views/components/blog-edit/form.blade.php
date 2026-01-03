@@ -47,6 +47,7 @@
             <option value="2" @selected(old('category_id', $post->category_id) == 2)>Yemek</option>
             <option value="3" @selected(old('category_id', $post->category_id) == 3)>Sanat</option>
             <option value="4" @selected(old('category_id', $post->category_id) == 4)>Bilim</option>
+            <option value="5" @selected(old('category_id', $post->category_id) == 5)>Eğlence</option>
         </select>
         @error('category_id')
         <p class="text-red-600 text-sm italic mt-1 font-medium">{{$message}}</p>
@@ -59,7 +60,7 @@
             name="tags"
             type="text"
             placeholder="tasarım, tipografi, ux"
-            value="{{ old('tags') }}"
+            value="@foreach($post->tags as $tag){{old('tags',$tag->name) . "," }}@endforeach"
             class="w-full rounded-xl border border-slate-200 px-4 py-3 focus:border-base focus:outline-none">
         <p class="text-xs text-slate-500">Virgülle ayırabilirsiniz.</p>
     </div>

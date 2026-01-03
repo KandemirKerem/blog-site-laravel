@@ -45,6 +45,7 @@
             <option value="2" {{ old('category_id') == 2 ? 'selected' : '' }}>Yemek</option>
             <option value="3" {{ old('category_id') == 3 ? 'selected' : '' }}>Sanat</option>
             <option value="4" {{ old('category_id') == 4 ? 'selected' : '' }}>Bilim</option>
+            <option value="5" {{ old('category_id') == 5 ? 'selected' : '' }}>Eğlence</option>
         </select>
         @error('category_id')
         <p class="text-red-600 text-sm italic mt-1 font-medium">{{$message}}</p>

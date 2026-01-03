@@ -64,6 +64,8 @@ class PostController extends Controller
             'image'       => $imageToSave,
         ]);
 
+        $post->syncTags($request->tags ?? "");
+
         return redirect('/dashboard');
     }
     public function destroy(Post $post){
