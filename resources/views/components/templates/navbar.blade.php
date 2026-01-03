@@ -38,8 +38,8 @@
           <a class="px-4 py-3 rounded-xl border border-slate-200 bg-white" href="{{route('blogs.index')}}">Tüm Bloglar</a>
           <a class="px-4 py-3 rounded-xl border border-slate-200 bg-white" href="{{route('dashboard.view')}}">Panelim</a>
           <a class="px-4 py-3 rounded-xl border border-slate-200 bg-white" href="{{route('profile')}}">Profil</a>
-        </div>
-        <div class="grid gap-2">
+
+
             @guest
             <a href="{{route('login')}}" class="px-4 py-3 rounded-xl border border-slate-200 bg-white">Giriş Yap</a>
             <a href="{{route('register')}}" class="px-4 py-3 rounded-xl bg-base text-white">Kayıt Ol</a>

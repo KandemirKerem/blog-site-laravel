@@ -24,6 +24,7 @@
             <select wire:model.live="sort" class="cursor-pointer bg-white border rounded-xl px-3 py-2 text-sm focus:outline-none">
                 <option value="newest">En son yayınlanan</option>
                 <option value="oldest">En eski</option>
+                <option value="popular">En popüler</option>
             </select>
         </div>
     </div>

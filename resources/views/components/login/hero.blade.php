@@ -1,6 +1,6 @@
 <main class="min-h-screen grid lg:grid-cols-2">
     <div class="hidden lg:block relative bg-slate-900 text-white">
-        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=80" class="absolute inset-0 w-full h-full object-cover opacity-60" alt="">
+        <img src="{{asset('assets/images/bilgisayar.avif')}}" class="absolute inset-0 w-full h-full object-cover opacity-60" alt="">
         <div class="relative p-12 h-full flex flex-col justify-between">
             <div>
                 <span class="px-3 py-1 rounded-full bg-white/10 text-sm font-semibold">NovaBlog</span>

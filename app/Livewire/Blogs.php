@@ -68,7 +68,7 @@ class Blogs extends Component
             $query->reorder()->oldest();
         } elseif ($this->sort === 'popular') {
             // Eğer likes_count yoksa bunu 'views' vs. ile değiştir
-            $query->reorder()->orderBy('id', 'desc');
+            $query->reorder()->orderBy('views', 'desc');
         } else {
             $query->reorder()->latest();
         }

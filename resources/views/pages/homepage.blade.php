@@ -7,7 +7,7 @@
 
 
     <!--Components-->
-    <x-homepage.hero/>
+    <x-homepage.hero :mostPopular="$mostPopular"/>
     <x-homepage.filter-search/>
     <x-homepage.recentblogs :recent="$recent"/>
     <x-homepage.populerblogs :popular="$popular"/>

@@ -100,12 +100,22 @@ class PostController extends Controller
 
     //Other Pages
     public function homepagePosts(){
+        // 1. En Yeniler: Sıfırdan sorgu başlatıyoruz
+        $recent = Post::with(['user','tags','category'])
+            ->latest()
+            ->take(6)
+            ->get();
 
-        $posts = Post::with(['user','tags','category']);
-        $recent = $posts->latest()->take(6)->get();
-        $popular = $posts->orderBy('views', 'DESC')->take(3)->get();
+        // 2. Popülerler: Yine sıfırdan sorgu başlatıyoruz
+        $popular = Post::with(['user','tags','category'])
+            ->orderBy('views', 'DESC')
+            ->take(3)
+            ->get();
 
-        return view('pages.homepage',compact('recent','popular'));
+        // 3. En Popüler: Zaten yukarıdaki listenin birincisi
+        $mostPopular = $popular->first();
+
+        return view('pages.homepage', compact('recent', 'popular', 'mostPopular'));
     }
 
 }
