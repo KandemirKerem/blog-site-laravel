@@ -15,3 +15,8 @@ Bu proje, Laravel ve Livewire kullanılarak geliştirilmiş bir blog sitesidir.
 3. `cp .env.example .env`
 4. `php artisan key:generate`
 5. `php artisan migrate`
+
+Projenin CSS (Tailwind) ve JS (Livewire/Vite) dosyalarının anlık olarak derlenmesi için şu komutu çalıştırmanız gerekir:
+
+```bash
+npm install && npm run dev
