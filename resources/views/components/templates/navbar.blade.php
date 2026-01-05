@@ -16,6 +16,7 @@
           <x-templates.navlink href="{{route('blogs.index')}}" :active="request()->is('blogs*')">Tüm Bloglar</x-templates.navlink>
           <x-templates.navlink href="{{route('dashboard.view')}}" :active="request()->is('dashboard')">Panelim</x-templates.navlink>
           <x-templates.navlink href="{{route('profile')}}" :active="request()->is('profile')">Profil</x-templates.navlink>
+          <x-templates.navlink href="{{route('about.contact')}}" :active="request()->is('about-contact')">Hakkımızda</x-templates.navlink>
         </nav>
         <div class="hidden md:flex items-center gap-3">
           @guest

@@ -10,8 +10,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <meta name="description" content="{{$desc ?? 'NovaBlog ile Modern Blog Deneyimi.'}}">
+    @stack('meta')
     @livewireStyles
     @vite('resources/css/app.css')
+
 
 </head>
 <body class="bg-white text-base font-sans">

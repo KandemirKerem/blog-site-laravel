@@ -2,7 +2,6 @@
 
 namespace App\Mail;
 
-use App\Models\Post;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -10,16 +9,18 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class test extends Mailable
+class ContactMail extends Mailable
 {
     use Queueable, SerializesModels;
+
+    public $formData;
 
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct($data)
     {
-        //
+        $this->formData = $data;
     }
 
     /**
@@ -28,7 +29,7 @@ class test extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Test',
+            subject: 'NovaBlog - Yeni İletişim Mesajı',
         );
     }
 
@@ -38,7 +39,7 @@ class test extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'mail.test',
+            view: 'mail.contact-mail',
         );
     }
 

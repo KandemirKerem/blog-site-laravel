@@ -2,6 +2,7 @@
 
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SessionController;
@@ -11,12 +12,10 @@ use App\Mail\test;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('test', function () {
 
-    \Illuminate\Support\Facades\Mail::to('kandemirhuseyinkerem@gmail.com')->send(new test());
 
-    return 'ok';
-});
+Route::post('/contactmail',[MailController::class,'contactMail'])
+    ->name('contactmail');
 
 
 //Homepage
@@ -78,3 +77,10 @@ Route::put('/profile/password', [ProfileController::class, 'updatePassword'])->n
 //Others
 Route::view('/dashboard','pages.dashboard')
     ->middleware('auth')->name('dashboard.view');
+
+Route::view('/about-contact','pages.about-contact')
+->name('about.contact');
+
+Route::view('/terms','pages.terms')
+->name('terms');
+
