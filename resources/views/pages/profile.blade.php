@@ -1,12 +1,16 @@
 <x-layout>
 
-    <!-- Page Title -->
+    {{--Page Title--}}
     <x-slot:title>
         Profil
     </x-slot:title>
 
+    {{--Meta description--}}
+    <x-slot:desc>
+    NovaBlog profilini görüntüle ve hesabını yönet. Diğer kullanıcıların görebileceği profil fotoğrafını güncelle.
+    </x-slot:desc>
 
-    <!--components-->
+    {{--Compoments--}}
     <x-profile.main/>
 
 </x-layout>

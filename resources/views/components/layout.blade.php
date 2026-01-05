@@ -10,12 +10,16 @@
         {{ $config ?? '' }}
     </x-slot:config>
 
+    <x-slot:desc>
+        {{$desc  ?? "NovaBlog ile yeni yazıları keşfet."}}
+    </x-slot:desc>
+
 </x-templates.head>
 
 <!-- Navbar -->
 <x-templates.navbar/>
 
-<!-- Main Content -->
+{{-- Page Content --}}
 {{ $slot }}
 
 

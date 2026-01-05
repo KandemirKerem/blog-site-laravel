@@ -1,12 +1,17 @@
 <x-layout>
 
-    <!-- Page Title -->
+    {{--Page Title--}}
     <x-slot:title>
-        Ana Sayfa
+        Anasayfa
     </x-slot:title>
 
+    {{--Meta description--}}
+    <x-slot:desc>
+        NovaBlog'da sınır yok! Hayata dair her şeyi paylaşın, ilginç hikayeler okuyun ve özgürce içerik üreten topluluğumuza katılın. Sizin sesiniz, sizin blogunuz.
+    </x-slot:desc>
 
-    <!--Components-->
+
+    {{--Compoments--}}
     <x-homepage.hero :mostPopular="$mostPopular"/>
     <x-homepage.filter-search/>
     <x-homepage.recentblogs :recent="$recent"/>

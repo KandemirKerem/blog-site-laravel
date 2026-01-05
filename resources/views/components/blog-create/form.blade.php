@@ -41,11 +41,11 @@
     <div class="space-y-2">
         <label class="text-sm font-semibold text-slate-700">Kategori</label>
         <select name="category_id" class="w-full rounded-xl border border-slate-200 px-4 py-3 focus:border-base focus:outline-none">
-            <option value="1" {{ old('category_id') == 1 ? 'selected' : '' }}>Yazılım</option>
-            <option value="2" {{ old('category_id') == 2 ? 'selected' : '' }}>Yemek</option>
-            <option value="3" {{ old('category_id') == 3 ? 'selected' : '' }}>Sanat</option>
-            <option value="4" {{ old('category_id') == 4 ? 'selected' : '' }}>Bilim</option>
-            <option value="5" {{ old('category_id') == 5 ? 'selected' : '' }}>Eğlence</option>
+            @foreach($categories as $category)
+                <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : '' }}>
+                    {{ $category->name }}
+                </option>
+            @endforeach
         </select>
         @error('category_id')
         <p class="text-red-600 text-sm italic mt-1 font-medium">{{$message}}</p>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Http\Requests\PostRequest;
+use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -15,7 +16,9 @@ class PostController extends Controller
     //Blog Pages (resource)
     public function create(){
 
-        return view('pages.blog-create');
+        $categories=Category::all();
+
+        return view('pages.blog-create',compact('categories'));
     }
     public function store(PostRequest $request){
 
@@ -94,7 +97,9 @@ class PostController extends Controller
 
         Gate::authorize('crud-post', $post);
 
-        return view('pages.blog-edit', compact('post'));
+        $categories=Category::all();
+
+        return view('pages.blog-edit', compact('post','categories'));
     }
 
 

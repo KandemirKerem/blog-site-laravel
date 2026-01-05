@@ -43,11 +43,11 @@
     <div class="space-y-2">
         <label class="text-sm font-semibold text-slate-700">Kategori</label>
         <select name="category_id" class="w-full rounded-xl border border-slate-200 px-4 py-3 focus:border-base focus:outline-none">
-            <option value="1" @selected(old('category_id', $post->category_id) == 1)>Yazılım</option>
-            <option value="2" @selected(old('category_id', $post->category_id) == 2)>Yemek</option>
-            <option value="3" @selected(old('category_id', $post->category_id) == 3)>Sanat</option>
-            <option value="4" @selected(old('category_id', $post->category_id) == 4)>Bilim</option>
-            <option value="5" @selected(old('category_id', $post->category_id) == 5)>Eğlence</option>
+            @foreach($categories as $category)
+                <option value="{{ $category->id }}" @selected(old('category_id', $post->category_id) == $category->id)>
+                    {{ $category->name }}
+                </option>
+            @endforeach
         </select>
         @error('category_id')
         <p class="text-red-600 text-sm italic mt-1 font-medium">{{$message}}</p>

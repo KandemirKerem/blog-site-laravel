@@ -1,4 +1,4 @@
- <!-- Navbar -->
+
   <header class="sticky top-0 z-40 backdrop-blur bg-white/80 border-b border-slate-100">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">

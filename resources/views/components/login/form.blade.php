@@ -3,7 +3,7 @@
         <div class="flex items-center gap-3">
             <span class="w-10 h-10 rounded-2xl bg-slate-900 text-white grid place-items-center font-bold">N</span>
             <div>
-                <p class="text-base font-semibold text-slate-900">NovaBlog</p>
+                <p class="text-base font-semibold">NovaBlog</p>
                 <p class="text-sm text-slate-500">Giriş yap ve yazılarını yönet.</p>
             </div>
         </div>
