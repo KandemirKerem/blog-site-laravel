@@ -19,7 +19,7 @@
                 <input id="password" name="password" type="password" placeholder="••••••••" class="w-full rounded-xl border border-slate-200 px-4 py-3 focus:border-base focus:outline-none">
             </div>
 
-            <button type="submit" class="w-full py-3 bg-base text-white rounded-xl text-sm font-semibold hover:bg-slate-900">Giriş yap</button>
+            <button type="submit" class="w-full py-3 bg-base text-white rounded-xl text-sm font-semibold cursor-pointer hover:shadow-lg hover:bg-slate-700 transition-all duration-300">Giriş yap</button>
             <p class="text-sm text-center text-slate-600">Hesabın yok mu? <a href="{{route('register')}}" class="text-base font-semibold">Kayıt ol</a></p>
             @error('email')
             <p class="text-center text-sm font-medium text-red-600 bg-red-50 py-2 px-4 rounded-xl mt-2 border border-red-100">

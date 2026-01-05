@@ -26,7 +26,7 @@
           @auth
               <form method="post" action="{{route('logout')}}">
                   @csrf
-                  <button type="submit" class="px-5 py-2.5 text-sm font-semibold text-red-600 bg-red-50 border border-red-100 rounded-xl hover:bg-red-600 hover:text-white transition-all duration-200 shadow-sm active:scale-95">
+                  <button type="submit" class="cursor-pointer px-5 py-2.5 text-sm font-semibold text-red-600 bg-red-50 border border-red-100 rounded-xl hover:bg-red-600 hover:text-white transition-all duration-200 shadow-sm active:scale-95">
                       Çıkış Yap
                   </button>
               </form>
@@ -39,7 +39,7 @@
           <a class="px-4 py-3 rounded-xl border border-slate-200 bg-white" href="{{route('blogs.index')}}">Tüm Bloglar</a>
           <a class="px-4 py-3 rounded-xl border border-slate-200 bg-white" href="{{route('dashboard.view')}}">Panelim</a>
           <a class="px-4 py-3 rounded-xl border border-slate-200 bg-white" href="{{route('profile')}}">Profil</a>
-
+          <a class="px-4 py-3 rounded-xl border border-slate-200 bg-white" href="{{route('about.contact')}}">Hakkımızda</a>
 
             @guest
             <a href="{{route('login')}}" class="px-4 py-3 rounded-xl border border-slate-200 bg-white">Giriş Yap</a>

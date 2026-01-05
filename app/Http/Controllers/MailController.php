@@ -8,7 +8,13 @@ use Illuminate\Support\Facades\Mail;
 
 class MailController extends Controller
 {
-    public function ContactMail(Request $request){
+    public function contactmail(Request $request){
+
+        $request->validate([
+            'name'    => 'required|min:3|max:50', // Zorunlu, en az 3, en fazla 50 karakter
+            'email'   => 'required|email',        // Zorunlu ve geçerli bir e-posta olmalı
+            'message' => 'required|min:10',       // Zorunlu ve en az 10 karakter
+        ]);
 
         // Verileri yakala
         $data = [

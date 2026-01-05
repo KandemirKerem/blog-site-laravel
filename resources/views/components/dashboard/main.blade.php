@@ -6,8 +6,8 @@
         <h1 class="text-3xl font-bold text-slate-900">Kontrol Paneli</h1>
       </div>
       <div class="flex gap-3">
-        <a href="{{route('blogs.create')}}" class="px-4 py-3 bg-base text-white rounded-xl text-sm font-semibold hover:bg-slate-900">Yeni Blog Ekle</a>
-        <a href="{{route('profile')}}" class="px-4 py-3 bg-soft text-base rounded-xl text-sm font-semibold hover:text-base">Profilim</a>
+        <a href="{{route('blogs.create')}}" class="px-4 py-3 bg-base text-white rounded-xl text-sm font-semibold cursor-pointer hover:shadow-lg hover:bg-slate-700 transition-all duration-300">Yeni Blog Ekle</a>
+        <a href="{{route('profile')}}" class="px-4 py-3 bg-soft text-base rounded-xl text-sm font-semibold cursor-pointer hover:shadow-lg transition-all duration-300">Profilim</a>
       </div>
     </div>
 
@@ -48,7 +48,7 @@
                   <div class="flex flex-col sm:flex-row sm:items-start justify-between text-xs text-slate-500 gap-2">
                       <div class="flex flex-wrap items-center gap-2 min-w-0">
                           {{-- Başlık: Mobilde genişliği kısıtladık --}}
-                          <span class="px-3 py-1 bg-soft text-accent rounded-full font-semibold truncate max-w-[180px] sm:max-w-none">
+                          <span class="px-3 py-1 bg-soft text-accent rounded-full font-semibold truncate max-w-45 sm:max-w-none">
                 {{$post->title}}
             </span>
                           <span class="shrink-0 text-slate-400">Yayında</span>
@@ -57,14 +57,14 @@
                   </div>
 
                   {{-- İçerik Kısmı --}}
-                  <p class="text-sm text-slate-600 line-clamp-2 break-words">
+                  <p class="text-sm text-slate-600 line-clamp-2 wrap-break-word">
                       {{$post->excerpt}}
                   </p>
 
                   {{-- Butonlar: Mobilde sıkışmaması için gap ve flex düzeni --}}
                   <div class="flex items-center justify-between gap-2 pt-2">
                       <div class="flex items-center gap-2">
-                          <a href="{{route('blogs.edit',$post->slug)}}" class="px-3 py-2 rounded-lg bg-soft text-base text-xs sm:text-sm font-semibold whitespace-nowrap">
+                          <a href="{{route('blogs.edit',$post->slug)}}" class="px-3 py-2 rounded-lg bg-soft text-base text-xs sm:text-sm font-semibold whitespace-nowrap cursor-pointer hover:shadow-lg transition-all duration-300">
                               Düzenle
                           </a>
 
@@ -72,7 +72,7 @@
                               form="delete-form-{{ $post->id }}"
                               onclick="return confirm('Bu yazıyı silmek istediğine emin misin knk? Bu işlem geri alınamaz!')"
                               type="submit"
-                              class="px-3 py-2 rounded-lg border border-red-200 bg-red-50 text-red-600 text-xs sm:text-sm font-semibold hover:bg-red-600 hover:text-white hover:border-red-600 transition-colors duration-200 whitespace-nowrap"
+                              class="cursor-pointer px-3 py-2 rounded-lg border border-red-200 bg-red-50 text-red-600 text-xs sm:text-sm font-semibold hover:bg-red-600 hover:text-white hover:border-red-600 transition-colors duration-200 whitespace-nowrap"
                           >
                               Sil
                           </button>

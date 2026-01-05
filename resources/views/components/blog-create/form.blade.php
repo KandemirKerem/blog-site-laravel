@@ -80,11 +80,11 @@
     <div class="flex items-center justify-between">
         <a href="{{ route('dashboard.view') }}" class="text-sm font-semibold text-slate-600">Geri dön</a>
         <div class="flex gap-3">
-            <a href="{{ route('dashboard.view') }}" class="px-4 py-3 bg-soft text-base rounded-xl text-sm font-semibold ">İptal</a>
+            <a href="{{ route('dashboard.view') }}" class="px-4 py-3 bg-soft text-base rounded-xl text-sm font-semibold cursor-pointer hover:shadow-lg transition-all duration-300">İptal</a>
            {{-- İlerde Ekle Taslak olarak kaydetme olayı
             <button type="button" class="px-4 py-3 bg-soft text-base rounded-xl text-sm font-semibold ">Taslak Kaydet</button>
            --}}
-            <button id="submitBtn" type="submit" class="px-4 py-3 bg-base text-white rounded-xl text-sm font-semibold hover:bg-slate-900">Yayınla</button>
+            <button id="submitBtn" type="submit" class="px-4 py-3 bg-base text-white rounded-xl text-sm font-semibold cursor-pointer hover:shadow-lg hover:bg-slate-700 transition-all duration-300">Yayınla</button>
         </div>
     </div>
     <script>

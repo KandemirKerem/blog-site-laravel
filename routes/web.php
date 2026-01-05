@@ -8,14 +8,12 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\VerifyController;
 use App\Livewire\Blogs;
-use App\Mail\test;
 use Illuminate\Support\Facades\Route;
 
 
-
-
-Route::post('/contactmail',[MailController::class,'contactMail'])
-    ->name('contactmail');
+Route::post('/contactmail',[MailController::class,'contactmail'])
+    ->name('contactmail')
+    ->middleware('throttle:3,1');
 
 
 //Homepage

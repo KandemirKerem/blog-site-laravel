@@ -7,6 +7,7 @@ Bu projeye ileride eklemeyi düşündüğüm özellikler:
 - [ ] **Like Sistemi:** Postlara like butonu.
 - [ ] **Yorumlar için Like sistemi:** Yorumlara da like atılabilecek.
 - [ ] **Anında Arama:** Ara butonuna basılmadan yazıldığı an arama yapma.
+- [ ] **Taslak Postlar** Post paylaşılmadan taslak olarak kaydedilebilmeli ve daha sonra düzenlebilmeli.
 
 # 📋 TO DO LIST
 - [ ] **500 Internal Server Error fix** yeni hesap oluşturunca email/verify sayfasına yönlendirirken bazen gelen hata.

@@ -4,16 +4,16 @@
         <div class="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 shadow-sm focus-within:ring-1 focus-within:ring-base/20 w-full">
             <input wire:model.defer="search" type="text" placeholder="Aradığınız kelime..." class="w-full bg-transparent focus:outline-none text-sm text-slate-700" />
         </div>
-        <button type="submit" class="cursor-pointer px-4 py-3 rounded-2xl bg-slate-900 text-white text-sm font-semibold hover:bg-black transition">Ara</button>
+        <button type="submit" class="cursor-pointer px-4 py-3 rounded-2xl bg-slate-900 text-white text-sm font-semibold cursor-pointer hover:shadow-lg hover:bg-slate-700 transition-all duration-300">Ara</button>
     </form>
 
     {{-- 2. Filtreler ve Sıralama --}}
     <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div class="flex flex-wrap gap-2">
-            <button wire:click="selectCategory('')" class="px-4 py-2 rounded-xl text-sm font-semibold {{ $category == '' ? 'bg-slate-900 text-white' : 'bg-white border text-slate-700' }}">Tümü</button>
+            <button wire:click="selectCategory('')" class="cursor-pointer hover:shadow-lg hover:bg-slate-900 transition-all duration-300 hover:text-white px-4 py-2 rounded-xl text-sm font-semibold {{ $category == '' ? 'bg-slate-900 text-white' : 'bg-white border text-slate-700' }}">Tümü</button>
             @foreach($categories as $cat)
                 <button wire:click="selectCategory('{{ $cat->slug }}')"
-                        class="hover:bg-slate-900 hover:text-white cursor-pointer px-4 py-2 rounded-xl text-sm font-semibold {{ $category == $cat->slug ? 'bg-slate-900 text-white' : 'bg-white border text-slate-700' }}">
+                        class="cursor-pointer hover:shadow-lg hover:bg-slate-900 transition-all duration-300 hover:text-white  px-4 py-2 rounded-xl text-sm font-semibold {{ $category == $cat->slug ? 'bg-slate-900 text-white' : 'bg-white border text-slate-700' }}">
                     {{ $cat->name }}
                 </button>
             @endforeach

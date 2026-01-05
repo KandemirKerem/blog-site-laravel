@@ -42,7 +42,7 @@
             {{$message}}
             @enderror
 
-            <button type="submit" class="w-full py-3 bg-base text-white rounded-xl text-sm font-semibold hover:bg-slate-900">Hesap oluştur</button>
+            <button type="submit" class="w-full py-3 bg-base text-white rounded-xl text-sm font-semibold cursor-pointer hover:shadow-lg hover:bg-slate-700 transition-all duration-300">Hesap oluştur</button>
             <p class="text-sm text-center text-slate-600">Zaten hesabın var mı? <a href="{{route('login')}}" class="text-base font-semibold">Giriş yap</a></p>
         @if($errors->any())
             @foreach($errors->all() as $error)

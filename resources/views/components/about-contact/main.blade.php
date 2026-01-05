@@ -30,19 +30,19 @@
 
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div class="bg-card rounded-2xl p-4 border border-slate-100 shadow-sm">
-                <img src="images/kahve.avif" alt="Kurucular" class="w-full h-28 object-cover rounded-xl">
+                <img src="{{asset('assets/images/bilgisayar.avif')}}" alt="Kurucular" class="w-full h-28 object-cover rounded-xl">
                 <h4 class="mt-3 font-semibold text-slate-900">Kurucular</h4>
-                <p class="text-sm text-slate-600">Tutkulu bir ekip tarafından yönetiliyoruz; tasarımcılar, yazılım geliştiriciler ve editörlerden oluşan küçük ama etkili bir grubuz.</p>
+                <p class="text-sm text-slate-600">Bu proje tamemen öğrenme amaçlı bir öğrenci tarafından geliştirilmiştir</p>
             </div>
             <div class="bg-card rounded-2xl p-4 border border-slate-100 shadow-sm">
-                <img src="images/internetkafe.avif" alt="Topluluk" class="w-full h-28 object-cover rounded-xl">
+                <img src="{{asset('assets/images/kafe.avif')}}" alt="Topluluk" class="w-full h-28 object-cover rounded-xl">
                 <h4 class="mt-3 font-semibold text-slate-900">Topluluk</h4>
-                <p class="text-sm text-slate-600">Yazarlarımızla ve okuyucularımızla sürekli iletişim halindeyiz; geri bildirimler ürünümüzün merkezinde yer alır.</p>
+                <p class="text-sm text-slate-600">Bu proje tamemen açık kaynaklıdır ve herkes github üzerinden erişebilir.</p>
             </div>
             <div class="bg-card rounded-2xl p-4 border border-slate-100 shadow-sm">
-                <img src="images/calısma.avif" alt="Değerler" class="w-full h-28 object-cover rounded-xl">
+                <img src="{{asset('assets/images/kahve.avif')}}" alt="Değerler" class="w-full h-28 object-cover rounded-xl">
                 <h4 class="mt-3 font-semibold text-slate-900">Değerlerimiz</h4>
-                <p class="text-sm text-slate-600">Açıklık, kalite, sürdürülebilirlik ve kullanıcı odaklılık kararlarımızda rehberimizdir.</p>
+                <p class="text-sm text-slate-600">Açıklık, kalite, sürdürülebilirlik ve kullanıcı odaklılık bizim değerlerimiz arasında yer almaktadır.</p>
             </div>
         </div>
     </section>
@@ -57,12 +57,12 @@
                 <div class="flex items-center gap-3 text-sm text-slate-600">
                     <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M112 128C85.5 128 64 149.5 64 176C64 191.1 71.1 205.3 83.2 214.4L291.2 370.4C308.3 383.2 331.7 383.2 348.8 370.4L556.8 214.4C568.9 205.3 576 191.1 576 176C576 149.5 554.5 128 528 128L112 128zM64 260L64 448C64 483.3 92.7 512 128 512L512 512C547.3 512 576 483.3 576 448L576 260L377.6 408.8C343.5 434.4 296.5 434.4 262.4 408.8L64 260z"/></svg>
                     <div>
-                        <div class="text-sm text-slate-600"><span class="font-semibold text-slate-900">E-posta : </span> iletisim@novablog.com</div>
+                        <div class="text-sm text-slate-600"><span class="font-semibold text-slate-900">E-posta : </span> kandemirhuseyinkerem@gmail.com</div>
                     </div>
                 </div>
             </div>
 
-            <form class="mt-6 grid gap-3" action="{{route('contactmail')}}" method="post">
+            <form class="mt-6 grid gap-3" action="{{route('contactmail')}}" method="post" onsubmit="disableButton()">
                 @csrf
                 <div class="grid sm:grid-cols-2 gap-3">
                     <input required name="name" value="{{ old('name') }}" placeholder="İsim" class="px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-1 focus:ring-base/20" />
@@ -70,8 +70,8 @@
                 </div>
                 <textarea required name="message" rows="5"  placeholder="Mesajınız" class="px-4 py-3 rounded-2xl border border-slate-200 focus:outline-none focus:ring-1 focus:ring-base/20">{{ old('message') }}</textarea>
                 <div class="flex items-center gap-3">
-                    <button type="submit" class="px-5 py-3 bg-base text-white rounded-xl text-sm font-semibold hover:bg-slate-900">Gönder</button>
-                    <button type="reset" class="px-4 py-3 border border-slate-200 rounded-xl text-sm font-semibold text-slate-600">Temizle</button>
+                    <button id="submitBtn" type="submit" class="px-5 py-3 bg-base text-white rounded-xl text-sm font-semibold cursor-pointer hover:shadow-lg hover:bg-slate-700 transition-all duration-300">Gönder</button>
+                    <button type="reset" class="px-4 py-3 border border-slate-200 rounded-xl text-sm font-semibold text-slate-600 cursor-pointer hover:shadow-lg transition-all duration-300">Temizle</button>
                 </div>
                 {{-- Başarı Mesajı --}}
                 @if(session('success'))
@@ -96,11 +96,25 @@
             <h3 class="font-semibold text-slate-900">Sosyal</h3>
             <p class="text-sm text-slate-600 mt-2">Bizi takip edin ve güncellemelerden haberdar olun.</p>
             <div class="flex gap-3 mt-3">
-                <a href="#" class="px-4 py-2 rounded-xl border border-slate-200 text-sm font-semibold">Twitter</a>
-                <a href="#" class="px-4 py-2 rounded-xl border border-slate-200 text-sm font-semibold">LinkedIn</a>
-                <a href="#" class="px-4 py-2 rounded-xl border border-slate-200 text-sm font-semibold">Instagram</a>
+                <a href="#" class="px-4 py-2 rounded-xl border border-slate-200 text-sm font-semibold cursor-pointer hover:shadow-lg hover:bg-slate-900 transition-all duration-300 hover:text-white">
+                    Twitter
+                </a>
+                <a href="#" class="px-4 py-2 rounded-xl border border-slate-200 text-sm font-semibold cursor-pointer hover:shadow-lg hover:bg-slate-900 transition-all duration-300 hover:text-white">
+                    LinkedIn
+                </a>
+                <a href="#" class="px-4 py-2 rounded-xl border border-slate-200 text-sm font-semibold cursor-pointer hover:shadow-lg hover:bg-slate-900 transition-all duration-300 hover:text-white">
+                    Instagram
+                </a>
             </div>
         </div>
     </aside>
 </main>
+<script>
+    function disableButton() {
+        const btn = document.getElementById('submitBtn');
+        btn.disabled = true;
+        btn.innerText = 'Yükleniyor...';
+        btn.classList.add('opacity-50', 'cursor-not-allowed');
+    }
+</script>
 
