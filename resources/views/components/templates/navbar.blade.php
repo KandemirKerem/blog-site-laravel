@@ -20,8 +20,8 @@
         </nav>
         <div class="hidden md:flex items-center gap-3">
           @guest
-          <a href="{{route('login')}}" class="px-4 py-2 text-sm font-semibold text-base border border-slate-200 rounded-xl hover:border-base/30">Giriş Yap</a>
-          <a href="{{route('register')}}" class="px-4 py-2 text-sm font-semibold text-white bg-base rounded-xl hover:bg-slate-900">Kayıt Ol</a>
+          <a href="{{route('login')}}" class="px-4 py-2 text-sm font-semibold text-base border border-slate-200 rounded-xl cursor-pointer hover:shadow-lg transition-all duration-300">Giriş Yap</a>
+          <a href="{{route('register')}}" class="px-4 py-2 text-sm font-semibold text-white bg-base rounded-xl cursor-pointer hover:shadow-lg hover:bg-slate-700 transition-all duration-300">Kayıt Ol</a>
           @endguest
           @auth
               <form method="post" action="{{route('logout')}}">

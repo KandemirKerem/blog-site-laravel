@@ -11,9 +11,6 @@ use App\Livewire\Blogs;
 use Illuminate\Support\Facades\Route;
 
 
-Route::post('/contactmail',[MailController::class,'contactmail'])
-    ->name('contactmail')
-    ->middleware('throttle:3,1');
 
 
 //Homepage
@@ -81,4 +78,10 @@ Route::view('/about-contact','pages.about-contact')
 
 Route::view('/terms','pages.terms')
 ->name('terms');
+
+Route::post('/contactmail',[MailController::class,'contactmail'])
+    ->name('contactmail')
+//    ->middleware('throttle:3,1')
+;
+
 

@@ -21,11 +21,11 @@
           </div>
         </div>
 
-        <div class="relative">
+        <div class="relative hover:shadow-card transition-all duration-200 group rounded-3xl ">
           <div class="absolute -left-10 -top-10 w-32 h-32 bg-soft rounded-full blur-3xl"></div>
           <div class="absolute -right-12 -bottom-10 w-32 h-32 bg-accent/10 rounded-full blur-3xl"></div>
           <div class="bg-white rounded-3xl shadow-card border border-slate-100 p-4 space-y-4">
-            <img class="rounded-2xl object-cover h-64 w-full" src="{{ $mostPopular->image ? asset('storage/'.$mostPopular->image) : asset('storage/blog-images/default.avif')}}" alt="Blog cover">
+            <img class="rounded-2xl object-cover h-64 w-full" src="{{ $mostPopular ? asset('storage/'.$mostPopular->image) : asset('storage/blog-images/default.avif')}}" alt="Blog cover">
             <div class="space-y-2">
               <div class="flex gap-2">
                 <span class="px-3 py-1 text-xs font-semibold bg-soft text-accent rounded-full">{{$mostPopular->category->name}}</span>
@@ -35,7 +35,7 @@
               <p class="text-sm text-slate-600">{{$mostPopular->excerpt}}</p>
               <div class="flex items-center justify-between text-xs text-slate-500">
                 <span>{{$mostPopular->user->name}}</span>
-                <a href="{{route('blogs.show',$mostPopular->slug)}}" class="text-base font-semibold relative z-50">Devamını Oku →</a>
+                <a href="{{route('blogs.show',$mostPopular->slug)}}" class="text-base font-semibold relative z-50 group-hover:underline">Devamını Oku →</a>
               </div>
             </div>
           </div>
