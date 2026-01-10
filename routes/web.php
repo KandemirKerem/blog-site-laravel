@@ -8,6 +8,9 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\VerifyController;
 use App\Livewire\Blogs;
+use App\Models\Category;
+use App\Models\Post;
+use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Route;
 
 
@@ -81,7 +84,28 @@ Route::view('/terms','pages.terms')
 
 Route::post('/contactmail',[MailController::class,'contactmail'])
     ->name('contactmail')
-//    ->middleware('throttle:3,1')
-;
+    ->middleware('throttle:3,1');
 
+Route::get('/sitemap.xml', function () {
+    $now = now()->toAtomString();
+
+
+    $posts = Post::latest()->get();
+
+    $staticPages = [
+        ['url' => route('homepage'), 'priority' => '1.0'],
+        ['url' => route('blogs.index'), 'priority' => '0.9'],
+        ['url' => route('about.contact'), 'priority' => '0.7'],
+        ['url' => route('terms'), 'priority' => '0.5'],
+    ];
+
+    $categories = Category::pluck('slug')->toArray();
+
+    return Response::make(view('sitemap', [
+        'posts' => $posts,
+        'staticPages' => $staticPages,
+        'categories' => $categories,
+        'now' => $now
+    ]), 200, ['Content-Type' => 'application/xml']);
+});
 

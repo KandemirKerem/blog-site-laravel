@@ -20,7 +20,7 @@
             <span>Kandemir Hüseyin Kerem</span>
           </div>
         </div>
-
+@if($mostPopular)
         <div class="relative hover:shadow-card transition-all duration-200 group rounded-3xl ">
           <div class="absolute -left-10 -top-10 w-32 h-32 bg-soft rounded-full blur-3xl"></div>
           <div class="absolute -right-12 -bottom-10 w-32 h-32 bg-accent/10 rounded-full blur-3xl"></div>
@@ -40,6 +40,9 @@
             </div>
           </div>
         </div>
+@else()
+<p>deneme</p>
+@endif()
       </div>
     </div>
   </section>

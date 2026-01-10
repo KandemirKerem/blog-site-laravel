@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Providers;
-
+use Illuminate\Support\Facades\Route;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
@@ -23,6 +23,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+
+\Livewire\Livewire::setUpdateRoute(function ($handle) {
+        return Route::post('/livewire/update', $handle)
+            ->middleware(['web']); // Şimdilik localization'ı buradan çıkar
+    });
 
         Model::preventLazyLoading();
 

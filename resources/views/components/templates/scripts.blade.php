@@ -27,5 +27,5 @@
 
 <script src="{{ asset('vendor/livewire/livewire.js') }}"
         data-csrf="{{ csrf_token() }}"
-        data-update-uri="/blogsitesi/public/livewire/update">
+        data-update-uri="/livewire/update">
 </script>

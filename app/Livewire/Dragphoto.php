@@ -29,7 +29,7 @@ class Dragphoto extends Component
     {
         // Resim seçildiği an valide et ve kalıcı olarak kaydet
         $this->validate([
-            'photo' => 'image|max:2048'
+            'photo' => 'image|max:10240'
         ]);
 
         // Resim storage/app/public/blog-images klasörüne gider
