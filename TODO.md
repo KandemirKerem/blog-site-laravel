@@ -10,11 +10,13 @@ Bu projeye ileride eklemeyi düşündüğüm özellikler:
 - [ ] **Taslak Postlar** Post paylaşılmadan taslak olarak kaydedilebilmeli ve daha sonra düzenlebilmeli.
 
 # 📋 TO DO LIST
-- [ ] **500 Internal Server Error fix** yeni hesap oluşturunca email/verify sayfasına yönlendirirken bazen gelen hata.
+- [x] **500 Internal Server Error fix** yeni hesap oluşturunca email/verify sayfasına yönlendirirken bazen gelen hata.
 - [ ] **Kuyruk (queue)** Mail yollarken bu sistemi kullan.
-- [ ] **Performans Düzeltmeleri** sitenin kodları sunucuda (şuan local) 600ms - 1s vakit alıyor. hedef -> 0-300ms
+- [ ] **Performans Düzeltmeleri** sitenin kodları sunucuda (şuan production) 0ms - 350ms vakit alıyor. hedef -> 0-250ms
 - [ ] **Muhtemel Güvenlik Açıkları Araştırması**
-- [ ] **Doğrulama Mailini Kişiselleştir**
-- [ ] **Gerçekten Mail Yolla** Mailtrap ile yapılan testler yerine gerçekten mail yolla.
+- [x] **Doğrulama Mailini Kişiselleştir**
+- [x] **Gerçekten Mail Yolla** Mailtrap ile yapılan testler yerine gerçekten mail yolla.
 - [ ] **Hata sayfaları (Opsiyonel):** Hata sayfalarını kişiselleştir.
-- [ ] **Prod Geç!** Bütün Bunları yaptıktan sonra domain ve hosting hizmeti al ve işi bitir.
+- [x] **Prod Geç!** Bütün Bunları yaptıktan sonra domain ve hosting hizmeti al ve işi bitir.
+- [ ] **Admin Paneli Oluştur** Kullancı silme / düzenleme , post silme / düzenleme yapabilen admin hesaplar.
+- [ ] **Farlı cihazdan mail doğrulama** kullanıcılar bilgisayarından kayıt olduktan sonra gelen maili telefondan onaylama çalıştıklarında maildeki linke tıklandığı gibi onaylanması ve login olması gerekiyor.
