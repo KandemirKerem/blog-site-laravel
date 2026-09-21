@@ -159,14 +159,8 @@
 
                     <!-- Security Notice Box -->
                     <div class="info-box">
-                        ⏱️ Bu doğrulama bağlantısı <strong>60 dakika</strong> boyunca geçerlidir.<br>
-                        🔒 Eğer NovaBlog'da siz hesap oluşturmadıysanız, bu e-postayı güvenle yok sayabilirsiniz.
-                    </div>
-
-                    <!-- Fallback Link -->
-                    <div class="fallback-link">
-                        Butona tıklamakta sorun yaşıyorsanız, aşağıdaki bağlantıyı kopyalayıp tarayıcınızın adres çubuğuna yapıştırabilirsiniz:<br>
-                        <a href="{{ $url }}">{{ $url }}</a>
+                        Bu doğrulama bağlantısı <strong>60 dakika</strong> boyunca geçerlidir.<br>
+                        NovaBlog'da siz hesap oluşturmadıysanız, bu e-postayı dikkate almayınız.
                     </div>
                 </td>
             </tr>
@@ -175,8 +169,8 @@
             <tr>
                 <td class="footer">
                     <p style="margin: 0 0 8px 0;">© {{ date('Y') }} NovaBlog. Tüm hakları saklıdır.</p>
-                    <p style="margin: 0;">
-                        <a href="{{ config('app.url') }}">{{ parse_url(config('app.url'), PHP_URL_HOST) ?? 'nova-blog.com' }}</a>
+                    <p style="margin: 0; color: #64748b;">
+                        nova-blog.com
                     </p>
                 </td>
             </tr>

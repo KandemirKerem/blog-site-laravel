@@ -34,6 +34,7 @@ class AppServiceProvider extends ServiceProvider
 
         VerifyEmail::toMailUsing(function (object $notifiable, string $url) {
             return (new MailMessage)
+                ->from(config('mail.from.address'), config('mail.from.name', 'NovaBlog') ?: 'NovaBlog')
                 ->subject('NovaBlog - E-posta Adresinizi Doğrulayın')
                 ->view('mail.verify-email', [
                     'user' => $notifiable,
