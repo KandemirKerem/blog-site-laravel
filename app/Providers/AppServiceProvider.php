@@ -4,7 +4,9 @@ namespace App\Providers;
 
 use App\Models\Post;
 use App\Models\User;
+use Illuminate\Auth\Notifications\VerifyEmail;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
 
@@ -28,6 +30,15 @@ class AppServiceProvider extends ServiceProvider
 
         Gate::define('crud-post', function (User $user , Post $post) {
             return $post->user->is($user);
+        });
+
+        VerifyEmail::toMailUsing(function (object $notifiable, string $url) {
+            return (new MailMessage)
+                ->subject('NovaBlog - E-posta Adresinizi Doğrulayın')
+                ->view('mail.verify-email', [
+                    'user' => $notifiable,
+                    'url' => $url,
+                ]);
         });
 
     }
