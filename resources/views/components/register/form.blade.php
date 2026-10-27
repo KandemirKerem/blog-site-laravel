@@ -42,6 +42,13 @@
             {{$message}}
             @enderror
 
+            <div class="flex justify-center pt-2">
+                <div class="cf-turnstile" data-sitekey="{{ config('services.turnstile.key') }}" data-theme="light"></div>
+            </div>
+            @error('cf-turnstile-response')
+                <p class="text-xs text-red-500 text-center">{{ $message }}</p>
+            @enderror
+
             <button type="submit" class="w-full py-3 bg-base text-white rounded-xl text-sm font-semibold hover:bg-slate-900">Hesap oluştur</button>
             <p class="text-sm text-center text-slate-600">Zaten hesabın var mı? <a href="{{route('login')}}" class="text-base font-semibold">Giriş yap</a></p>
         @if($errors->any())

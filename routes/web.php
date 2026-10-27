@@ -7,16 +7,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\VerifyController;
 use App\Livewire\Blogs;
-use App\Mail\test;
 use Illuminate\Support\Facades\Route;
-
-
-Route::get('test', function () {
-
-    \Illuminate\Support\Facades\Mail::to('kandemirhuseyinkerem@gmail.com')->send(new test());
-
-    return 'ok';
-});
 
 
 //Homepage
@@ -48,7 +39,9 @@ Route::post('/logout',[SessionController::class,'destroy'])->name('logout');
 
 // Auth
 Route::get('/register',[AuthController::class , 'create'])->name('register');
-Route::post('/register',[AuthController::class , 'store'])->name('register.store');
+Route::post('/register',[AuthController::class , 'store'])
+    ->middleware('throttle:5,1')
+    ->name('register.store');
 
 
 //Verify Email
@@ -64,7 +57,7 @@ Route::get('/email/verify/{id}/{hash}', [VerifyController::class , 'verify'])
 
 // 3. Onay mailini tekrar gönderme butonu için
 Route::post('/email/verification-notification', [VerifyController::class , 'resend'])
-    ->middleware(['auth', 'throttle:6,1'])
+    ->middleware(['auth', 'throttle:3,1'])
     ->name('verification.send');
 
 
@@ -72,7 +65,9 @@ Route::post('/email/verification-notification', [VerifyController::class , 'rese
 Route::middleware(['auth'])->group( function () {
 Route::get('/profile',[ProfileController::class,'profile'])->name('profile');
 Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-Route::put('/profile/password', [ProfileController::class, 'updatePassword'])->name('password.update');
+Route::put('/profile/password', [ProfileController::class, 'updatePassword'])
+    ->middleware('throttle:5,1')
+    ->name('password.update');
 });
 
 //Others

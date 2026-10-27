@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Rules\Turnstile;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -15,18 +16,23 @@ class AuthController extends Controller
 
     public function store(Request $request){
 
-
         $request->session()->flush();
         $request->session()->regenerate();
 
-        $attributes = request()->validate([
-            'name' => ['required',],
-            'email' => ['required','email','unique:users,email'],
-            'password' => ['required','confirmed','min:4'],
-
+        $attributes = $request->validate([
+            'name' => ['required'],
+            'email' => ['required', 'email', 'unique:users,email'],
+            'password' => ['required', 'confirmed', 'min:4'],
+            'cf-turnstile-response' => ['required', new Turnstile],
+        ], [
+            'cf-turnstile-response.required' => 'Lütfen bot doğrulamasını tamamlayın.',
         ]);
 
-        $user = User::create($attributes);
+        $user = User::create([
+            'name' => $attributes['name'],
+            'email' => $attributes['email'],
+            'password' => $attributes['password'],
+        ]);
 
         event(new Registered($user));
 
